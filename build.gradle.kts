@@ -27,7 +27,7 @@ tasks {
     withType<KotlinCompile> { kotlinOptions.jvmTarget = "17" }
     withType<Test> {
         useJUnitPlatform()
-        environment("_JAVA_OPTIONS", "--add-opens=java.base/java.nio=ALL-UNNAMED")
+        environment("_JAVA_OPTIONS", "--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED")
     }
     shadowJar {
         setProperty("zip64", true)
